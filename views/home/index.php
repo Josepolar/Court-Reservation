@@ -84,7 +84,7 @@
 </section>
 
 <!-- Court Types Section -->
-<section class="py-16 bg-white">
+<section class="py-16 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Find Your Sport</h2>
@@ -119,7 +119,7 @@
 </section>
 
 <!-- Featured Courts -->
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center mb-8">
             <div>
@@ -174,7 +174,7 @@
 </section>
 
 <!-- How It Works -->
-<section class="py-16 bg-yellow-100">
+<section class="py-16 bg-blue-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
@@ -218,11 +218,11 @@
 </section>
 
 <!-- Cities Section -->
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Available Cities</h2>
-            <p class="text-gray-600">Find courts near you</p>
+            <p class="text-gray-600">Find Courts Near You</p>
         </div>
         
         <div class="flex flex-wrap justify-center gap-3">
