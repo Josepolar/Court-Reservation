@@ -245,7 +245,8 @@ function toggleDropdown() {
                         <span class="text-xl font-bold"><?= APP_NAME ?></span>
                     </div>
                     <p class="text-gray-400 text-sm">
-                        Book sports courts easily in the Philippines. Basketball, badminton, tennis, and more.
+                        Book sports courts easily anywhere in the Philippines. 
+                        Reserve basketball, badminton, tennis courts, and more in just a few clicks.
                     </p>
                 </div>
                 
