@@ -30,6 +30,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Google Icons -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    
     <style>
         body { font-family: 'Poppins', sans-serif; }
         .hero-gradient { background: linear-gradient(135deg, #0038A8 0%, #1e40af 50%, #0038A8 100%); }
@@ -46,18 +50,102 @@
                         <span class="text-xl font-bold text-ph-blue"><?= APP_NAME ?></span>
                     </a>
                     
-                    <div class="hidden md:flex ml-10 space-x-4">
-                        <a href="<?= url('courts') ?>" class="text-gray-700 hover:text-ph-blue px-3 py-2 rounded-md text-sm font-medium transition">
-                            <i class="fas fa-map-marker-alt mr-1"></i> Browse Courts
-                        </a>
-                        <a href="<?= url('courts/type/basketball') ?>" class="text-gray-700 hover:text-ph-blue px-3 py-2 rounded-md text-sm font-medium transition">
-                            <i class="fas fa-basketball-ball mr-1"></i> Basketball
-                        </a>
-                        <a href="<?= url('courts/type/badminton') ?>" class="text-gray-700 hover:text-ph-blue px-3 py-2 rounded-md text-sm font-medium transition">
-                            <i class="fas fa-table-tennis mr-1"></i> Badminton
-                        </a>
-                    </div>
-                </div>
+             <div class="hidden md:flex ml-10 items-center space-x-4">
+    
+    <!-- Browse Courts -->
+    <a href="<?= url('courts') ?>" 
+       class="text-gray-700 hover:text-ph-blue px-3 py-2 rounded-md text-sm font-medium transition flex items-center">
+        <i class="fas fa-map-marker-alt mr-1"></i> 
+        Browse Courts
+    </a>
+
+  <div class="relative inline-block text-left">
+
+    <!-- Button -->
+    <button onclick="toggleDropdown()" 
+        class="flex items-center text-gray-700 hover:text-ph-blue px-3 py-2 text-sm font-medium transition">
+        
+        <span class="material-symbols-outlined mr-1 text-base">
+            sports_and_outdoors
+        </span>
+        All Sports
+    </button>
+
+     <!-- Dropdown Menu -->
+<div id="sportsDropdown" 
+     class="hidden absolute left-0 mt-2 w-40
+            bg-white rounded-lg shadow-lg
+            border border-gray-100
+            overflow-hidden z-50">
+
+       <!-- All Sports -->
+    
+    <div class="border-t border-gray-100"></div>
+
+      <!-- Badminton -->
+    <a href="<?= url('courts/type/badminton') ?>" 
+       class="flex items-center px-3 py-2 text-xs text-gray-700 
+              hover:bg-gray-50 hover:text-ph-blue transition duration-150">
+        <span class="material-symbols-outlined mr-2 text-base text-ph-blue">
+            sports_handball
+        </span>
+        Badminton
+    </a>
+
+       <!-- Basketball -->
+    <a href="<?= url('courts/type/basketball') ?>" 
+       class="flex items-center px-3 py-2 text-xs text-gray-700 
+              hover:bg-gray-50 hover:text-ph-blue transition duration-150">
+        <span class="material-symbols-outlined mr-2 text-base text-ph-blue">
+            sports_basketball
+        </span>
+        Basketball
+    </a>
+
+       <!-- Futsal -->
+    <a href="<?= url('courts/type/futsal') ?>" 
+       class="flex items-center px-3 py-2 text-xs text-gray-700 
+              hover:bg-gray-50 hover:text-ph-blue transition duration-150">
+        <span class="material-symbols-outlined mr-2 text-base text-ph-blue">
+            sports_soccer   
+        </span>
+        Futsal
+    </a>
+
+       <!-- Tennis -->
+    <a href="<?= url('courts/type/tennis') ?>" 
+       class="flex items-center px-3 py-2 text-xs text-gray-700 
+              hover:bg-gray-50 hover:text-ph-blue transition duration-150">
+        <span class="material-symbols-outlined mr-2 text-base text-ph-blue">
+            sports_tennis
+        </span>
+        Tennis
+    </a>
+
+        <!-- Volleyball -->
+    <a href="<?= url('courts/type/volleyball') ?>" 
+       class="flex items-center px-3 py-2 text-xs text-gray-700 
+              hover:bg-gray-50 hover:text-ph-blue transition duration-150">
+        <span class="material-symbols-outlined mr-2 text-base text-ph-blue">
+            sports_volleyball
+        </span>
+        Volleyball
+    </a>
+</div>
+
+
+</div>
+</div>
+
+<script>
+function toggleDropdown() {
+    document.getElementById("sportsDropdown").classList.toggle("hidden");
+}
+</script>
+
+
+</div>
+
                 
                 <div class="flex items-center space-x-4">
                     <?php if (isLoggedIn()): ?>
@@ -173,20 +261,22 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Sports</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="<?= url('courts/type/basketball') ?>" class="hover:text-white transition">Basketball</a></li>
                         <li><a href="<?= url('courts/type/badminton') ?>" class="hover:text-white transition">Badminton</a></li>
-                        <li><a href="<?= url('courts/type/tennis') ?>" class="hover:text-white transition">Tennis</a></li>
+                        <li><a href="<?= url('courts/type/basketball') ?>" class="hover:text-white transition">Basketball</a></li>
                         <li><a href="<?= url('courts/type/futsal') ?>" class="hover:text-white transition">Futsal</a></li>
+                        <li><a href="<?= url('courts/type/tennis') ?>" class="hover:text-white transition">Tennis</a></li>
+                        <li><a href="<?= url('courts/type/volleyball') ?>" class="hover:text-white transition">Volleyball</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Payment Methods</h3>
                     <div class="flex space-x-3 mb-4">
-                        <img src="https://www.gcash.com/wp-content/uploads/2019/11/gcash-logo.png" alt="GCash" class="h-8 bg-white rounded p-1">
-                        <img src="https://www.maya.ph/hubfs/Maya-Logo.svg" alt="Maya" class="h-8 bg-white rounded p-1">
+                        <img src="./app/images/gcash-logo.png" alt="GCash" class="h-12  rounded p-1">
+                        <img src="./app/images/maya.png" alt="Maya" class="h-9  rounded p-1">
+                        <img src="./app/images/qr_ph.png" alt="QR Ph" class="h-9 rounded p-1">
                     </div>
-                    <p class="text-gray-400 text-sm">We accept QR Ph payments</p>
+                  <!--  <p class="text-gray-400 text-sm">We accept QR Ph payments</p> -->
                 </div>
             </div>
             

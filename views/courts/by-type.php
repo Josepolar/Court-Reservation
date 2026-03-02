@@ -32,6 +32,7 @@
                 default => 'fa-building text-gray-400'
             };
             ?>
+
             <i class="fas <?= $icon ?> text-4xl mr-4"></i>
             <div>
                 <h1 class="text-3xl font-bold"><?= e($courtType['name']) ?></h1>
