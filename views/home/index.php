@@ -23,15 +23,33 @@
                 </div>
                 
                 <!-- Payment Methods -->
-                <div class="mt-8 flex items-center space-x-4">
-                    <span class="text-blue-200 text-sm">Pay with:</span>
-                    <div class="flex space-x-2">
-                        <span class="bg-white/20 px-3 py-1 rounded text-sm">GCash</span>
-                        <span class="bg-white/20 px-3 py-1 rounded text-sm">Maya</span>
-                        <span class="bg-white/20 px-3 py-1 rounded text-sm">QR Ph</span>
+<div class="mt-8 flex items-center space-x-4">
+    <span class="text-blue-200 text-sm">Pay with:</span>
+
+    <div class="flex space-x-2 items-center">
+
+        <!-- GCash -->
+        <div class="flex flex-col items-center p-2 border rounded-lg w-20 bg-white/20 hover:shadow-md transition">
+            <img src="./app/images/gcash-logo.png" alt="GCash Icon" class="w-11 h-9 mb-1">
+            <p class="font-medium text-xs text-center">GCash</p>
+        </div>
+
+        <!-- Maya -->
+        <div class="flex flex-col items-center p-2 border rounded-lg w-20 bg-white/20 hover:shadow-md transition">
+            <img src="./app/images/maya.png" alt="Maya Icon" class="w-10 h-9 mb-1">
+            <p class="font-medium text-xs text-center">Maya</p>
+        </div>
+
+        <!-- QR Ph -->
+        <div class="flex flex-col items-center p-2 border rounded-lg w-20 bg-white/20 hover:shadow-md transition">
+            <img src="./app/images/qr_ph.png" alt="QR Ph Icon" class="w-10 h-10 mb-1">
+            <p class="font-medium text-xs text-center">QR Ph</p>
+        </div>
+
+    </div>
+</div>
                     </div>
-                </div>
-            </div>
+
             
             <div class="hidden md:block">
                 <div class="relative">
@@ -156,7 +174,7 @@
 </section>
 
 <!-- How It Works -->
-<section class="py-16 bg-white">
+<section class="py-16 bg-yellow-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
