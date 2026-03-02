@@ -3,7 +3,7 @@
  * Payment Controller
  * Handles QR payments via GCash, Maya, Bank QR
  */
-class PaymentController extends Controller {
+class PaymentController extends Controller {    
     private $payment;
     private $booking;
     
