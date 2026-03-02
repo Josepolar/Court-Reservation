@@ -164,7 +164,7 @@
             <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700 mb-1">Select User</label>
                 <select name="user_id" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-ph-blue focus:border-transparent">
-                    <option value="">Search user...</option>
+                    <option value="">Search user...</option>  
                     <?php foreach ($users as $user): ?>
                     <option value="<?= $user['id'] ?>"><?= $user['name'] ?> (<?= $user['email'] ?>)</option>
                     <?php endforeach; ?>
