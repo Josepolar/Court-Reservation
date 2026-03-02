@@ -269,25 +269,17 @@ function toggleDropdown() {
                     </ul>
                 </div>
                 
-               <div>
-    <h3 class="text-lg font-semibold mb-4">Payment Methods</h3>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Payment Methods</h3>
+                    <div class="flex space-x-3 mb-4">
+                        <img src="./app/images/gcash-logo.png" alt="GCash" class="h-9  rounded p-1">
+                        <img src="./app/images/maya.png" alt="Maya" class="h-8 rounded p-1">
+                        <img src="./app/images/qr_ph.png" alt="QR Ph" class="h-8 rounded p-1">
+                    </div>
+                   <p class="text-gray-400 text-sm">Experience convenient, fast, and hassle-free online payments anytime.</p> 
+                </div>
+            </div>
 
-    <div class="flex items-center gap-4 mb-4">
-        <img src="images/gcash-logo.png')" 
-             alt="GCash" 
-             class="h-8 w-auto object-contain">
-
-        <img src="{{ asset('images/maya.png') }}" 
-             alt="Maya" 
-             class="h-8 w-auto object-contain">
-
-        <img src="{{ asset('images/qr_ph.png') }}" 
-             alt="QR Ph" 
-             class="h-8 w-auto object-contain">
-    </div>
-</div>
-
-         
             <hr class="border-gray-800 my-8">
             
             <div class="flex flex-col md:flex-row justify-between items-center">
