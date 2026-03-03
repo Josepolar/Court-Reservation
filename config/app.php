@@ -4,7 +4,7 @@
  * Court Reservation System for Philippines
  */
 
-// Prevent double loading
+// Prevent double loading Fetch sample
 if (defined('APP_NAME')) {
     return [
         'name' => APP_NAME,
