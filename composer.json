@@ -1,5 +1,9 @@
 {
     "require": {
-        "laravel/ui": "^4.6"
+        "laravel/ui": "^4.6",
+        "vlucas/phpdotenv": "*"
+    },
+    "scripts": {
+        "takbo": "php -S localhost:8000"
     }
 }

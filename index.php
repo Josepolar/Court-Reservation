@@ -3,6 +3,11 @@
  * Court Reservation System - Philippine Sports Facility Booking
  * Main entry point - Routes all requests
  */
+require __DIR__ . '/vendor/autoload.php';
+
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 // Error reporting for development
 error_reporting(E_ALL);

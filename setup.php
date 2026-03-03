@@ -66,10 +66,10 @@ echo "<h2>4. Database Setup</h2>";
 echo "<p class='info'>ℹ️ Make sure MySQL is running in XAMPP</p>";
 
 try {
-    $host = 'localhost';
-    $dbname = 'court_reservation';
-    $user = 'root';
-    $pass = '';
+    $host = $_ENV['DB_HOST'];
+    $dbname = $_ENV['DB_NAME'];
+    $user = $_ENV[DB_USER];
+    $pass = $_ENV[DB_PASS];
     
     // Connect without database first to create it
     $pdo = new PDO("mysql:host=$host", $user, $pass);

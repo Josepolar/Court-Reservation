@@ -94,6 +94,7 @@ class CourtController extends Controller {
     }
     
     public function calculatePrice($id) {
+        return $_GET;
         $date = $_GET['date'] ?? date('Y-m-d');
         $startTime = $_GET['start_time'] ?? '';
         $endTime = $_GET['end_time'] ?? '';

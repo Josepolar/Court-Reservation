@@ -16,9 +16,9 @@ if (defined('APP_NAME')) {
 }
 
 // Application Settings
-define('APP_NAME', 'Court Reservation PH');
-define('APP_URL', 'http://localhost/Court-Reservation');
-define('APP_TIMEZONE', 'Asia/Manila');
+define('APP_NAME', $_ENV['APP_NAME']);
+define('APP_URL', $_ENV['APP_URL']);
+define('APP_TIMEZONE', $_ENV['APP_TIMEZONE']);
 define('APP_CURRENCY', '₱');
 define('APP_CURRENCY_CODE', 'PHP');
 
