@@ -108,11 +108,79 @@
             <!-- Content -->
             <main class="flex-1 overflow-y-auto p-6">
                 <!-- Flash Messages -->
-                <?php if ($message = flash('success')): ?>
-                <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 rounded" role="alert">
-                    <p><i class="fas fa-check-circle mr-2"></i><?= $message ?></p>
+    <?php if (flash('success')): ?>
+    <div class="mb-6 w-full">
+        <div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 p-[1px] shadow-md">
+            
+            <div class="bg-white rounded-xl px-8 py-4">
+                
+                <div class="flex items-center justify-between">
+                    
+                    <!-- Left Content -->
+                <div>
+    <h2 class="text-lg md:text-xl font-semibold text-gray-800 flex items-center gap-2">
+        
+        <!-- Text -->
+        <span>
+            Welcome back,
+            <span class="text-indigo-600">
+                <?= $_SESSION['user']['name'] ?>
+            </span>
+        </span>
+
+        <!-- Wave Image  -->
+                            <span class="flex items-center gap-2">
+                                <img src="https://img.icons8.com/emoji/48/waving-hand-emoji.png"
+                                     alt="Waving Hand"
+                                     class="w-5 h-5 object-contain">
+                            </span>
+                        </h2>
+    
+   <p class="text-sm text-gray-500 mt-1 flex items-center gap-2">
+    <!-- Administrator Badge -->
+    <span class="px-2 py-0.5 border border-yellow-600 text-gray-500 rounded-full font-medium">
+        Administrator Access
+    </span>
+    
+  
+</p>
+
+</div>
+
+
+                  <!-- Date + Small Icon -->
+<div class="flex items-center gap-2">
+    
+    <!-- Date first -->
+    <span class="text-sm text-gray-500">
+        <?= date('F j, Y') ?>
+    </span>
+    
+    <!-- Small Icon -->
+    <div class="flex items-center justify-center w-9 h-9 bg-indigo-100 text-indigo-600 rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             class="w-4 h-4" 
+             fill="none" 
+             viewBox="0 0 24 24" 
+             stroke="currentColor">
+            <path stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7" />
+        </svg>
+    </div>
+    
+</div>
+
+
+
                 </div>
-                <?php endif; ?>
+
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
                 
                 <?php if ($message = flash('error')): ?>
                 <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 rounded" role="alert">
