@@ -596,19 +596,53 @@ class AdminController extends Controller {
         ], 'layouts.admin');
     }
     
-    private function uploadCourtImage($courtId, $file) {
-        $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-        if (!in_array($ext, ALLOWED_EXTENSIONS)) return;
-        
-        $uploadDir = UPLOAD_PATH . 'courts/';
-        if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
-        
-        $filename = 'court_' . $courtId . '_' . time() . '.' . $ext;
-        $filepath = $uploadDir . $filename;
-        
-        if (move_uploaded_file($file['tmp_name'], $filepath)) {
-            $court = new Court();
-            $court->update($courtId, ['thumbnail' => '/uploads/courts/' . $filename]);
-        }
+ private function uploadCourtImage($courtId, $file)
+{
+    if ($file['error'] !== 0) {
+        return;
+    }
+
+    $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+
+    if (!in_array($ext, ALLOWED_EXTENSIONS)) {
+        return;
+    }
+
+    $uploadDir = "uploads/courts/";
+
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0755, true);
+    }
+
+    $filename = "court_" . $courtId . "_" . time() . "." . $ext;
+
+    $filepath = $uploadDir . $filename;
+
+    if (move_uploaded_file($file['tmp_name'], $filepath)) {
+
+        $court = new Court();
+
+        $court->update($courtId, [
+            'thumbnail' => $filepath
+        ]);
     }
 }
+
+public function deleteCourtImage($courtId){
+
+    $court = new Court();
+
+    $court->update($courtId, [
+        'thumbnail' => null,
+        'thumbnail_type' => null
+    ]);
+
+    if (!empty($_FILES['thumbnail']['name'])) {
+    $this->uploadCourtImage($courtId, $_FILES['thumbnail']);
+}
+
+}
+
+
+    }
+

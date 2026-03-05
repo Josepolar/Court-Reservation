@@ -6,6 +6,10 @@
     <title>Page Not Found - Court Reservation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Browser Icon -->
+    <link rel="icon" href="/app/images/sports-svgrepo-com.svg" type="image/svg+xml">
+    
     <script>
         tailwind.config = {
             theme: {

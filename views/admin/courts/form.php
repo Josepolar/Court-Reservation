@@ -163,7 +163,11 @@
             <div class="flex items-center space-x-4">
                 <div class="w-32 h-32 bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center" id="imagePreview">
                     <?php if ($court['image'] ?? null): ?>
-                    <img src="<?= url('storage/courts/' . $court['image']) ?>" alt="Court" class="w-full h-full object-cover">
+                  <img 
+src="data:<?= htmlspecialchars($court['thumbnail_type']) ?>;base64,<?= base64_encode($court['thumbnail']) ?>" 
+alt="<?= htmlspecialchars($court['name']) ?>" 
+class="w-32 h-32 object-cover rounded-lg">
+
                     <?php else: ?>
                     <i class="fas fa-camera text-gray-400 text-2xl"></i>
                     <?php endif; ?>

@@ -14,6 +14,7 @@ INSERT INTO court_types (name, slug, icon, description) VALUES
 ('Badminton Court', 'badminton', 'badminton', 'Indoor badminton courts with proper flooring'),
 ('Tennis Court', 'tennis', 'tennis', 'Outdoor and indoor tennis courts'),
 ('Volleyball Court', 'volleyball', 'volleyball', 'Indoor and beach volleyball courts'),
+('Pickleball Court', 'pickleball', 'pickleball', 'Dedicated pickleball court with proper markings'),
 ('Futsal Court', 'futsal', 'futsal', 'Indoor futsal/football courts'),
 ('Covered Court', 'covered', 'building', 'Multipurpose covered courts'),
 ('Barangay Gym', 'gym', 'gym', 'Local barangay gymnasium facilities'),

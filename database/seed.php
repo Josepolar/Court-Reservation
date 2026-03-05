@@ -39,6 +39,7 @@ class DatabaseSeeder
             ['name' => 'Volleyball Court', 'description' => 'Indoor volleyball court with net', 'icon' => 'fa-volleyball-ball'],
             ['name' => 'Tennis Court', 'description' => 'Hard court tennis facility', 'icon' => 'fa-baseball-ball'],
             ['name' => 'Table Tennis', 'description' => 'Indoor table tennis area', 'icon' => 'fa-table-tennis'],
+            ['name' => 'Pickleball Court', 'description' => 'Dedicated pickleball court with proper markings', 'icon' => 'fa-table-tennis'],
             ['name' => 'Multi-Purpose', 'description' => 'Versatile court for multiple sports', 'icon' => 'fa-running'],
         ];
         

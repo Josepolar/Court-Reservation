@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Book sports courts in the Philippines - Basketball, Badminton, Tennis, Futsal and more">
     <title><?= $title ?? APP_NAME ?></title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -31,7 +31,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Google Icons -->
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <!-- Browser Icon -->
+    <link rel="icon" href="./app/images/sports-svgrepo-com.svg" type="image/svg+xml">
 
     
     <style>
@@ -112,6 +115,16 @@
         Futsal
     </a>
 
+    <!-- PickleBall -->
+    <a href="<?= url('courts/type/pickleball') ?>" 
+       class="flex items-center px-3 py-2 text-xs text-gray-700 
+              hover:bg-gray-50 hover:text-ph-blue transition duration-150">
+        <span class="material-symbols-outlined mr-2 text-base text-ph-blue">
+            sports_pickleball
+        </span>
+        Pickleball
+    </a>
+
        <!-- Tennis -->
     <a href="<?= url('courts/type/tennis') ?>" 
        class="flex items-center px-3 py-2 text-xs text-gray-700 
@@ -147,42 +160,62 @@ function toggleDropdown() {
 </div>
 
                 
-                <div class="flex items-center space-x-4">
-                    <?php if (isLoggedIn()): ?>
-                        <!-- Notifications -->
-                        <div class="relative" x-data="{ open: false }">
-                            <button @click="open = !open" class="text-gray-600 hover:text-ph-blue relative">
-                                <i class="fas fa-bell text-xl"></i>
-                                <span id="notification-badge" class="hidden absolute -top-1 -right-1 bg-ph-red text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
-                            </button>
-                        </div>
-                        
-                        <a href="<?= url('bookings') ?>" class="text-gray-700 hover:text-ph-blue px-3 py-2 rounded-md text-sm font-medium transition">
-                            <i class="fas fa-calendar-check mr-1"></i> My Bookings
-                        </a>
-                        
-                        <div class="relative" x-data="{ open: false }">
-                            <button @click="open = !open" class="flex items-center text-gray-700 hover:text-ph-blue">
-                                <i class="fas fa-user-circle text-2xl mr-2"></i>
-                                <span class="text-sm font-medium"><?= $_SESSION['user_name'] ?? 'User' ?></span>
-                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                            </button>
-                            
-                            <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                                <a href="<?= url('profile') ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                    <i class="fas fa-user mr-2"></i> Profile
-                                </a>
-                                <?php if (isAdmin()): ?>
-                                <a href="<?= url('admin') ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                    <i class="fas fa-cog mr-2"></i> Admin Panel
-                                </a>
-                                <?php endif; ?>
-                                <hr class="my-1">
-                                <a href="<?= url('logout') ?>" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
-                                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
-                                </a>
-                            </div>
-                        </div>
+                <div class="flex-1 flex justify-end items-center space-x-4">
+    <?php if (isLoggedIn()): ?>
+        <!-- Notifications -->
+        <div class="relative" x-data="{ open: false }">
+            <button @click="open = !open" class="text-gray-600 hover:text-ph-blue relative">
+                <i class="fas fa-bell text-xl"></i>
+                <span id="notification-badge" class="hidden absolute -top-1 -right-1 bg-ph-red text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            </button>
+        </div>
+
+        <!-- My Bookings -->
+        <a href="<?= url('bookings') ?>" class="flex items-center text-gray-700 hover:text-ph-blue px-3 py-2 rounded-md text-sm font-medium transition">
+            <i class="fas fa-calendar-check mr-1"></i> My Bookings
+        </a>
+
+        <!-- Admin Dropdown -->
+        <div class="relative" x-data="{ open: false }">
+            <!-- Dropdown Button -->
+            <button @click="open = !open" class="flex items-center space-x-2 text-gray-700 hover:text-ph-blue focus:outline-none">
+                <!-- Shield Icon -->
+                <i class="fas fa-user-shield text-gray-700 text-lg"></i>
+
+                <!-- Name -->
+                <span class="text-sm font-medium">Admin</span>
+
+                <!-- Chevron -->
+                <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div 
+                x-show="open" 
+                @click.away="open = false"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 translate-y-1"
+                class="absolute right-0 mt-2 w-48 bg-white border rounded-lg shadow-lg py-2 z-50"
+            >
+                <a href="<?= url('admin/profile') ?>" class="flex items-center px-4 py-2 hover:text-ph-blue text-gray-700 hover:bg-gray-100">
+                    <i class="fas fa-user mr-2"></i> Profile
+                </a>
+                <a href="<?= url('admin') ?>" class="flex items-center px-4 py-2 hover:text-ph-blue text-gray-700 hover:bg-gray-100">
+                    <i class="fas fa-cog mr-2"></i> Admin Panel
+                </a>
+                <hr class="my-1">
+                <a href="<?= url('logout') ?>" class="flex items-center px-4 py-2 text-red-600 hover:bg-red-100">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                </a>
+            </div>
+        </div>
+
+
+
                     <?php else: ?>
                         <a href="<?= url('login') ?>" class="text-gray-700 hover:text-ph-blue px-3 py-2 rounded-md text-sm font-medium transition">
                             Login

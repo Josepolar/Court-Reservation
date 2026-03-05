@@ -22,7 +22,7 @@
                     <?php endif; ?>
                 </div>
                 
-                <!-- Payment Methods -->
+<!-- Payment Methods -->
 <div class="mt-8 flex items-center space-x-4">
     <span class="text-blue-200 text-sm">Pay with:</span>
 

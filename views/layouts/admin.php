@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?? 'Admin - ' . APP_NAME ?></title>
     
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -29,6 +30,9 @@
     
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Browser Icon -->
+    <link rel="icon" href="./app/images/sports-svgrepo-com.svg" type="image/svg+xml">
     
     <style>
         body { font-family: 'Poppins', sans-serif; }
@@ -90,19 +94,40 @@
         
         <!-- Main Content -->
         <div class="flex-1 flex flex-col overflow-hidden">
+            
             <!-- Top Bar -->
             <header class="bg-white shadow-sm h-16 flex items-center justify-between px-6">
                 <h1 class="text-xl font-semibold text-gray-800"><?= $title ?? 'Dashboard' ?></h1>
                 
-                <div class="flex items-center space-x-4">
-                    <span class="text-gray-600">
-                        <i class="fas fa-user-shield mr-2"></i>
-                        <?= $_SESSION['user_name'] ?? 'Admin' ?>
-                    </span>
-                    <a href="<?= url('logout') ?>" class="text-red-600 hover:text-red-800">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </a>
-                </div>
+                <div x-data="{ open: false }" class="relative">
+    <!-- Dropdown Button -->
+    <button @click="open = !open" class="flex items-center space-x-2 focus:outline-none">
+        <i class="fas fa-user-shield text-gray-700"></i>
+        <span class="text-gray-800"><?= $_SESSION['user_name'] ?? 'Admin' ?></span>
+        <i class="fas fa-chevron-down text-gray-500"></i>
+    </button>
+
+    <!-- Dropdown Menu -->
+    <div 
+        x-show="open" 
+        @click.away="open = false"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 translate-y-1"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 translate-y-1"
+        class="absolute right-0 mt-2 w-45 bg-white border rounded-lg shadow-lg py-2 z-50"
+    >
+        <a href="<?= url('admin/profile') ?>" class="flex items-center px-4 py-2 hover:text-ph-blue text-gray-700 hover:bg-gray-100">
+            <i class="fas fa-user mr-2"></i> Profile
+        </a>
+        <a href="<?= url('logout') ?>" class="flex items-center px-4 py-2 text-red-600 hover:bg-red-100">
+            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+        </a>
+    </div>
+</div>
+
             </header>
             
             <!-- Content -->
