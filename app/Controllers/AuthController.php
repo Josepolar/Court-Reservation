@@ -123,14 +123,14 @@ class AuthController extends Controller {
         $this->redirect('/');
     }
     
-    public function showForgotPassword() {
+    public function showforgotpassword() {
         $this->requireGuest();
-        $this->renderWithLayout('auth.forgot-password', [
+        $this->renderWithLayout('auth.forgotpassword', [
             'title' => 'Forgot Password - ' . APP_NAME
         ]);
     }
-    
-    public function forgotPassword() {
+
+    public function forgotpassword() {
         $this->requireGuest();
         
         $email = sanitize($_POST['email'] ?? '');
