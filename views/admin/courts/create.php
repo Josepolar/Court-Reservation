@@ -149,7 +149,7 @@
             <h2 class="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b">Court Image</h2>
             
             <div class="flex items-center space-x-4">
-                <div class="w-32 h-32 bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center" id="imagePreview">
+                <div class="w-32 h-32 bg-gray-100 rounded-lg over flow-hidden flex items-center justify-center" id="imagePreview">
                     <i class="fas fa-camera text-gray-400 text-2xl"></i>
                 </div>
                 
@@ -203,4 +203,22 @@ function previewImage(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+function previewImage(input) {
+
+    const preview = document.getElementById("imagePreview");
+
+    if (input.files && input.files[0]) {
+
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.innerHTML =
+                '<img src="' + e.target.result + '" class="w-full h-full object-cover">';
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 </script>

@@ -260,6 +260,17 @@
                         <div class="bg-green-500 h-2 rounded-full" style="width: <?= $mayaPercent ?>%"></div>
                     </div>
                 </div>
+
+                    <div>
+                    <div class="flex justify-between text-sm mb-1">
+                        <span class="text-gray-600">QR Ph</span>
+                        <span class="font-medium"><?= formatPrice($paymentStats['maya_total'] ?? 0) ?></span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <?php $mayaPercent = ($paymentStats['total_paid'] ?? 0) > 0 ? (($paymentStats['maya_total'] ?? 0) / $paymentStats['total_paid']) * 100 : 0; ?>
+                        <div class="bg-green-500 h-2 rounded-full" style="width: <?= $mayaPercent ?>%"></div>
+                    </div>
+                </div>
                 
                 <div>
                     <div class="flex justify-between text-sm mb-1">

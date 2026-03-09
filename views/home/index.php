@@ -22,7 +22,7 @@
                     <?php endif; ?>
                 </div>
                 
-                <!-- Payment Methods -->
+<!-- Payment Methods -->
 <div class="mt-8 flex items-center space-x-4">
     <span class="text-blue-200 text-sm">Pay with:</span>
 
@@ -36,13 +36,13 @@
 
         <!-- Maya -->
         <div class="flex flex-col items-center p-2 border rounded-lg w-20 bg-white/20 hover:shadow-md transition">
-            <img src="./app/images/maya.png" alt="Maya Icon" class="w-10 h-9 mb-1">
+            <img src="./app/images/maya.png" alt="Maya Icon" class="w-9 h-9 mb-1">
             <p class="font-medium text-xs text-center">Maya</p>
         </div>
 
         <!-- QR Ph -->
         <div class="flex flex-col items-center p-2 border rounded-lg w-20 bg-white/20 hover:shadow-md transition">
-            <img src="./app/images/qr_ph.png" alt="QR Ph Icon" class="w-10 h-10 mb-1">
+            <img src="./app/images/qr_ph.png" alt="QR Ph Icon" class="w-9 h-9 mb-1">
             <p class="font-medium text-xs text-center">QR Ph</p>
         </div>
 

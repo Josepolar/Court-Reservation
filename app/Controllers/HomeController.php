@@ -12,7 +12,7 @@ class HomeController extends Controller {
         $cities = $court->getCities();
         
         $this->renderWithLayout('home.index', [
-            'title' => APP_NAME . ' - Book Sports Courts in the Philippines',
+            'title' => APP_NAME /**. ' - Book Sports Courts in the Philippines'*/,
             'courtTypes' => $courtTypes,
             'featuredCourts' => array_slice($featuredCourts, 0, 6),
             'cities' => $cities,

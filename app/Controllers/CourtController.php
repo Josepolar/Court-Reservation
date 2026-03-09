@@ -93,33 +93,33 @@ class CourtController extends Controller {
         ]);
     }
     
-    public function calculatePrice($id) {
-        return $_GET;
-        $date = $_GET['date'] ?? date('Y-m-d');
-        $startTime = $_GET['start_time'] ?? '';
-        $endTime = $_GET['end_time'] ?? '';
-        $isHalfCourt = isset($_GET['half_court']) && $_GET['half_court'] === '1';
-        
-        if (!$startTime || !$endTime) {
-            $this->json(['error' => 'Start and end time required'], 400);
-        }
-        
-        $price = $this->court->calculatePrice($id, $date, $startTime, $endTime, $isHalfCourt);
-        
-        if (!$price) {
-            $this->json(['error' => 'Could not calculate price'], 400);
-        }
-        
-        $this->json([
-            'success' => true,
-            'price' => $price,
-            'formatted' => [
-                'total' => formatPrice($price['total']),
-                'downpayment' => formatPrice($price['downpayment']),
-                'balance' => formatPrice($price['balance']),
-            ]
-        ]);
+   public function calculatePrice($id) {
+
+    $date = $_GET['date'] ?? date('Y-m-d');
+    $startTime = $_GET['start_time'] ?? '';
+    $endTime = $_GET['end_time'] ?? '';
+    $isHalfCourt = isset($_GET['half_court']) && $_GET['half_court'] === '1';
+
+    if (!$startTime || !$endTime) {
+        $this->json(['error' => 'Start and end time required'], 400);
     }
+
+    $price = $this->court->calculatePrice($id, $date, $startTime, $endTime, $isHalfCourt);
+
+    if (!$price) {
+        $this->json(['error' => 'Could not calculate price'], 400);
+    }
+
+    $this->json([
+        'success' => true,
+        'price' => $price,
+        'formatted' => [
+            'total' => formatPrice($price['total']),
+            'downpayment' => formatPrice($price['downpayment']),
+            'balance' => formatPrice($price['balance']),
+        ]
+    ]);
+}
     
     public function checkAvailability($id) {
         $date = $_GET['date'] ?? '';
@@ -137,4 +137,23 @@ class CourtController extends Controller {
             'available' => $available,
         ]);
     }
+
+
+    public function price($courtId)
+{
+    $date = $_GET['date'] ?? null;
+    $start = $_GET['start_time'] ?? null;
+    $end = $_GET['end_time'] ?? null;
+    $halfCourt = ($_GET['half_court'] ?? '0') === '1';
+
+    if (!$date || !$start || !$end) {
+        $this->json([
+            'success' => false,
+            'message' => 'Missing parameters'
+        ]);
+    }
+
+  
 }
+}
+

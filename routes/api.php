@@ -47,3 +47,4 @@ $router->post('/api/notifications/read-all', function() {
     $notification->markAllRead($_SESSION['user_id']);
     jsonResponse(['success' => true]);
 });
+
