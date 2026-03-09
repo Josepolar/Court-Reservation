@@ -1,3 +1,8 @@
+<?php
+$payment = $payment ?? null;
+$paymentProof = $paymentProof ?? null;
+?>
+
 <div class="max-w-4xl mx-auto">
     <div class="flex items-center justify-between mb-6">
         <h1 class="text-2xl font-bold text-gray-900">Booking Details</h1>
@@ -52,7 +57,9 @@
                     </div>
                     <div>
                         <p class="text-sm text-gray-500">Number of Players</p>
-                        <p class="font-medium"><?= $booking['num_players'] ?> players</p>
+                        <p class="font-medium">
+                            <?= isset($booking['num_players']) ? $booking['num_players'] . ' players' : 'N/A' ?>
+                        </p>
                     </div>
                 </div>
                 
@@ -73,8 +80,8 @@
                         <i class="fas fa-user text-ph-blue text-xl"></i>
                     </div>
                     <div>
-                        <p class="font-medium"><?= $booking['user_name'] ?></p>
-                        <p class="text-sm text-gray-500"><?= $booking['user_email'] ?></p>
+                        <p class="font-medium"><?= $booking['user_name'] ?? 'Unknown User' ?></p>
+                        <p class="text-sm text-gray-500"><?= $booking['user_email'] ?? 'No email provided' ?></p>
                     </div>
                 </div>
                 
