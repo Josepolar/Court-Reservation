@@ -23,6 +23,8 @@ $router->get('/logout', [AuthController::class, 'logout']);
 $router->post('/logout', [AuthController::class, 'logout']);
 $router->get('/forgotpassword', [AuthController::class, 'showForgotPassword']);
 $router->post('/forgotpassword', [AuthController::class, 'forgotPassword']);
+$router->get('/resetpassword', [AuthController::class, 'showResetPassword']);
+$router->post('/resetpassword', [AuthController::class, 'resetPassword']);
 $router->get('/profile', [AuthController::class, 'profile']);
 $router->post('/profile', [AuthController::class, 'updateProfile']);
 $router->post('/profile/password', [AuthController::class, 'changePassword']);

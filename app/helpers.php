@@ -387,3 +387,12 @@ function uploadFile($file, $directory, $allowedTypes = ['jpg', 'jpeg', 'png', 'g
     
     return ['success' => false, 'error' => 'Failed to save file'];
 }
+
+/**
+ * Send email via OAuth mail service.
+ */
+function sendEmail($toEmail, $subject, $textBody, $toName = '', $htmlBody = null)
+{
+    $mailer = new OAuthEmailService();
+    return $mailer->send($toEmail, $subject, $textBody, $toName, $htmlBody);
+}

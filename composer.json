@@ -1,7 +1,8 @@
 {
     "require": {
         "laravel/ui": "^4.6",
-        "vlucas/phpdotenv": "*"
+        "vlucas/phpdotenv": "*",
+        "league/oauth2-client": "^2.9"
     },
     "scripts": {
         "takbo": "php -S localhost:8000"
