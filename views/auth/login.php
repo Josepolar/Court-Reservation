@@ -43,7 +43,11 @@
                             class="h-4 w-4 text-ph-blue focus:ring-ph-blue border-gray-300 rounded">
                         <label for="remember" class="ml-2 text-sm text-gray-600">Remember me</label>
                     </div>
-                    <a href="<?= url('forgot-password') ?>" class="text-sm text-ph-blue hover:text-blue-800">
+                    <a href="<?= 
+                    
+                    url('forgotpassword') ;
+                    // var_dump(url('forgotpassword'))
+                    ?>" class="text-sm text-ph-blue hover:text-blue-800">
                         Forgot password?
                     </a>
                 </div>

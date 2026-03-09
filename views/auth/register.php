@@ -43,7 +43,8 @@
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <i class="fas fa-phone text-gray-400"></i>
                         </div>
-                        <input type="tel" id="phone" name="phone" value="<?= old('phone') ?>" required
+                        <input type="tel" id="phone" name="phone" value="<?= old('phone') ?>" required  pattern="\d{11}"
+                            maxlength="11"
                             class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ph-blue focus:border-transparent"
                             placeholder="09171234567">
                     </div>
